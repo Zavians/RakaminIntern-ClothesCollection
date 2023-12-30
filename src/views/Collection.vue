@@ -105,6 +105,8 @@ export default {
     margin: 0 auto;
     padding: 30px;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .section-title {
@@ -119,7 +121,7 @@ export default {
 }
 
 .product-item {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Penyesuaian pada box-shadow */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
     border: 5px solid white;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -153,7 +155,7 @@ export default {
 
 .women-title {
     color: var(--purple);
-    /* Define the color for Women's Collection */
+    
 }
 
 .product-category {
@@ -242,13 +244,18 @@ export default {
 }
 
 .unavailable-product {
+    align-items: center;
+    justify-content: center; 
+    display: flex; 
+    flex-direction: column; 
+    height: 50vh; 
+    width: 100svh;
     border: 5px solid white;
     border-radius: 8px;
     margin: 20px 0;
     padding: 20px;
     text-align: center;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Penyesuaian pada box-shadow */
-
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .unavailable-product p {

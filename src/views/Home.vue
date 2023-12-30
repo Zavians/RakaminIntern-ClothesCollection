@@ -144,6 +144,7 @@
 <style lang="scss" scoped>
 .home-page {
   background-image: linear-gradient(#fffbf5, #fffbf5);
+  height: 140vh;
 }
 
 .mid-text {
@@ -180,7 +181,7 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Penyesuaian pada box-shadow */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .card {
