@@ -142,62 +142,6 @@
 </template>
 
 <style lang="scss" scoped>
-.home-page {
-  background-image: linear-gradient(#fffbf5, #fffbf5);
-  height: 140vh;
-}
-
-.mid-text {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.mid-text a {
-  margin-top: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.container {
-  display: flex;
-}
-
-.containers {
-  background-color: var(--blackone);
-}
-
-
-
-.carousel-item {
-  object-fit: fill;
-  height: 35vh;
-  width: 100%;
-}
-
-.card-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
-}
-
-.card {
-  margin: 10px;
-}
-
-.judul-kategori {
-  margin-top: 40%;
-  margin-bottom: 50%;
-  text-align: center;
-}
-
-.text-kategori {
-  font-size: 3rem;
-  color: var(--whitetulang);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@import "../assets/style/home.scss"
 </style>
 
