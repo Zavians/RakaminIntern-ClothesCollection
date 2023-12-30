@@ -16,7 +16,7 @@
                             </h3>
                             <p class="product-category">{{ product.category }}</p>
                             <p class="product-description">{{ product.description }}</p>
-                            <p class="product-price">Price: ${{ product.price }}</p>
+                            <p :class="{'product-price-man':isMenCategory, 'product-price-woman':isWomenCategory}">Price: ${{ product.price }}</p>
                             <button type="button" :class="{ 'btn-primary-man': isMenCategory, 'btn-primary-woman': isWomenCategory }">Buy Now</button>
                             <button v-if="!isUnavailable" @click="getNextProducts" :class="{ 'btn-outline-primary-man': isMenCategory, 'btn-outline-primary-woman': isWomenCategory }" >Next
                                 Product</button>
@@ -169,9 +169,14 @@ export default {
     margin-bottom: 10px;
 }
 
-.product-price {
+.product-price-man {
     font-size: 18px;
     color: var(--blue);
+}
+
+.product-price-woman {
+    font-size: 18px;
+    color: var(--purple);
 }
 
 .btn-primary-man {

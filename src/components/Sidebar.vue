@@ -1,12 +1,14 @@
 <template>
   <aside :class="{ 'is-expanded': is_expanded }">
     <div class="logo">
-      <img src="../assets/vue.svg" alt="vue" />
+      <img
+        src="https://media.istockphoto.com/id/1305325287/id/vektor/logo-huruf-k-logo-huruf-k-kreatif.jpg?s=612x612&w=0&k=20&c=g7Gxjwjk91Urx3ohZUU0Fu2BP5EAaLOKFBXQdLkobF8="
+        alt="vue" />
     </div>
 
     <div class="menu-toggle-wrap">
       <button class="menu-toggle" @click="toggleMenu">
-        <span class="material-symbols-outlined"> double_arrow </span>
+        <span class="material-symbols-outlined">double_arrow</span>
       </button>
     </div>
 
@@ -16,26 +18,28 @@
         <span class="material-symbols-outlined"> home </span>
         <span class="text">Home</span>
       </router-link>
-      <router-link class="button" to="/about">
-        <span class="material-symbols-outlined">
-            info
-            </span>
-        <span class="text">About</span>
-      </router-link>
-
       <router-link class="button" to="/collection">
         <span class="material-symbols-outlined">
-            man
-            </span>
+          man
+        </span>
         <span class="text">Collection Section</span>
       </router-link>
-
-
     </div>
+
+    <div class="flexi"></div>
+      <div class="menu">
+        <router-link class="button" to="/set">
+        <span class="material-symbols-outlined">
+          settings
+        </span>
+        <span class="text">Setting</span>
+      </router-link>
+      </div>
+    
   </aside>
 </template>
   
-  <script setup>
+<script setup>
 import { ref } from "vue";
 
 const is_expanded = ref(false);
@@ -45,7 +49,7 @@ const toggleMenu = () => {
 };
 </script>
   
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
 aside {
   display: flex;
   flex-direction: column;
@@ -53,11 +57,15 @@ aside {
   min-height: 100vh;
   overflow: hidden;
   padding: 1rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 15px rgba(0, 0, 0, 0.2);
-  background-color: white;
-  color: var(--blue);
-  border-right: 2px solid white; 
-  transition: box-shadow 0.2s ease-out; 
+
+  background-color: var(--whitetulang);
+  color: var(--blackone);
+
+  transition: 0.2s ease-out;
+
+  .flexi {
+    flex: 1 1 0;
+  }
 
   .logo {
     margin-bottom: 1rem;
@@ -74,30 +82,75 @@ aside {
 
     position: relative;
     top: 0;
-    transition: 0.2s ease-out;
+    transition: 0.2 ease-out;
 
     .menu-toggle {
       transition: 0.2s ease-out;
 
-      .material-icons {
+      .material-symbols-outlined {
         font-size: 2rem;
         color: var(--blackone);
         transition: 0.2s ease-out;
       }
 
       &:hover {
-        .material-icons {
-          color: var(--blue);
+        .material-symbols-outlined {
+          color: var(--blacktwo);
           transform: translateX(0.5rem);
         }
       }
     }
   }
 
-  h3
+  h3,
+  .button .text {
+    opacity: 0;
+    transition: 0.3s ease-out;
+  }
+
+  h3 {
+    color: var(--blacktwo);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
 
   .menu {
-    margin:0 -1rem;
+    margin: 0 -1rem;
+
+    .button {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      padding: 0.5rem 1rem;
+      transition: 0.2s ease-out;
+
+      .material-symbols-outlined {
+        font-size: 2rem;
+        color: var(--blackone);
+        margin-bottom: 0.5rem;
+        transition: 0.2rem ease-out;
+      }
+
+      .text {
+        color: var(--blackone);
+        transition: 0.2rem ease-out;
+      }
+
+      &:hover, &.router-link-exact-active {
+        background-color: var(--bluesoft);
+
+        .material-symbols-outlined, .text{
+          color: var(--blue);
+        }
+      }
+
+      .router-link-exact-active {
+        border-right: 5px solid var(--bluesoft);
+      }
+
+    }
   }
 
   &.is-expanded {
@@ -108,6 +161,17 @@ aside {
 
       .menu-toggle {
         transform: rotate(-180deg);
+      }
+    }
+
+    h3,
+    .button .text {
+      opacity: 1;
+      
+    }
+    .button {
+      .material-symbols-outlined {
+        margin-right: 1rem;
       }
     }
   }
